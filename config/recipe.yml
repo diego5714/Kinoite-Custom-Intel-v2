@@ -142,7 +142,6 @@ modules:
       - libratbag-ratbagd
       - xwaylandvideobridge
       - mozilla-filesystem
-      - mozilla-openh264
       - nvtop
 
   - type: default-flatpaks
