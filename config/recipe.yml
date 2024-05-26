@@ -6,7 +6,7 @@ description: Imagen customizada de Fedora Kinoite, para su uso en mi Dell
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 39 # latest is also supported if you want new updates ASAP
+image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -22,22 +22,38 @@ modules:
     repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
       ####################
+      #Utilidades (CLI)
       - igt-gpu-tools
       - lm_sensors
-      - neofetch
+      - fastfetch
+      ####################
+      #Aplicaciones con GUI
+      - kvantum
+      - goverlay
+      - gnome-disk-utility
+      #####################
+      #Configuracion
       - hunspell-es
       - hunspell-es-CL
-      - gnome-disk-utility
       - steam-devices
+      #####################
+      #Otros
       - gamescope
-      - gcc
-      - kvantum
-      - okular
-      - gwenview
     
     remove:
+      #####################
+      #Programas
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+      - mozilla-filesystem
+      - nvtop
+      ######################
+      #Otros
+      - nvidia-gpu-firmware
+      - libratbag-ratbagd
+      - xwaylandvideobridge
+      ######################
+      #Fonts
       - google-noto-sans-cjk-fonts
       - google-noto-sans-javanese-fonts
       - google-noto-sans-balinese-fonts
@@ -57,7 +73,9 @@ modules:
       - google-noto-sans-kannada-vf-fonts
       - google-noto-sans-khmer-vf-fonts
       - google-noto-sans-lao-vf-fonts
+      - google-noto-sans-meeteimayek-vf-fonts
       - google-noto-sans-mono-cjk-vf-fonts
+      - google-noto-sans-ol-chiki-vf-fonts
       - google-noto-sans-oriya-vf-fonts
       - google-noto-sans-sinhala-vf-fonts
       - google-noto-sans-tamil-vf-fonts
@@ -68,6 +86,7 @@ modules:
       - google-noto-serif-bengali-vf-fonts
       - google-noto-serif-cjk-vf-fonts
       - google-noto-serif-devanagari-vf-fonts
+      - google-noto-serif-ethiopic-vf-fonts
       - google-noto-serif-georgian-vf-fonts
       - google-noto-serif-gujarati-vf-fonts
       - google-noto-serif-gurmukhi-vf-fonts
@@ -110,6 +129,7 @@ modules:
       - default-fonts-ku
       - default-fonts-lo
       - default-fonts-mai
+      - default-fonts-mni
       - default-fonts-ml
       - default-fonts-mr
       - default-fonts-my
@@ -121,6 +141,7 @@ modules:
       - default-fonts-or
       - default-fonts-pa
       - default-fonts-ru
+      - default-fonts-sat
       - default-fonts-si
       - default-fonts-ss
       - default-fonts-ta
@@ -138,11 +159,7 @@ modules:
       - jomolhari-fonts
       - default-fonts-other-sans
       - default-fonts-other-serif
-      - nvidia-gpu-firmware
-      - libratbag-ratbagd
-      - xwaylandvideobridge
-      - mozilla-filesystem
-      - nvtop
+      - default-fonts-other-mono
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
