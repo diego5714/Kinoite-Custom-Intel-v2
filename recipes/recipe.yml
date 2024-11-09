@@ -1,12 +1,15 @@
 # image will be published to ghcr.io/<user>/<name>
 name: kinoite-custom-intel-v2
+
 # description will be included in the image's metadata
 description: Imagen customizada de Fedora Kinoite, para su uso en mi Dell
   Optiplex (Intel CPU + GPU)
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 40 # latest is also supported if you want new updates ASAP
+
+# latest is also supported if you want new updates ASAP
+image-version: 40
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -18,12 +21,14 @@ modules:
         destination: /
 
         # copies files/system/* (* means everything inside it) into your image's root folder /
-        # put configuration files you want in /usr/etc/ inside the image
-        # while putting files in /etc/ is done on booted system by system administrators.
+
         # read more about this in files module reference.
 
   - type: rpm-ostree
-    repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    repos:
+
+    # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+
     install:
       ####################
       #Utilidades (CLI)
@@ -48,8 +53,8 @@ modules:
     remove:
       #####################
       #Programas
-      - firefox # default firefox removed in favor of flatpak
-      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+      - firefox
+      - firefox-langpacks
       - mozilla-filesystem
       - nvtop
       ######################
@@ -167,12 +172,15 @@ modules:
       - default-fonts-other-mono
 
   - type: default-flatpaks
+
     notify: true # Send notification after install/uninstall is finished (true/false)
+
     system:
       # If no repo information is specified, Flathub will be used by default
       # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+
       install:
         - org.mozilla.firefox
         # - org.gnome.Loupe
