@@ -98,7 +98,6 @@ modules:
       - rit-rachana-fonts               #Malayalam script
       - sil-padauk-fonts                #Burmese and Myanmar script
       - vazirmatn-vf-fonts              #Persian/arabic font
-
       - default-fonts-am
       - default-fonts-ar
       - default-fonts-as
@@ -159,7 +158,6 @@ modules:
       - default-fonts-xh
       - default-fonts-yi
       - default-fonts-zu
-
       - google-noto-naskh-arabic-vf-fonts
       - google-noto-sans-arabic-vf-fonts
       - google-noto-sans-armenian-vf-fonts
@@ -205,7 +203,6 @@ modules:
       - google-noto-serif-tamil-vf-fonts
       - google-noto-serif-telugu-vf-fonts
       - google-noto-serif-thai-vf-fonts
-
       - jomolhari-fonts
 
   - type: default-flatpaks
