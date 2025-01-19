@@ -49,7 +49,6 @@ modules:
       # Configs, libs and drivers
       - hunspell-es
       - hunspell-es-CL
-      - libva-intel-hybrid-driver
       - steam-devices
       #####################
       # Fonts
@@ -78,7 +77,6 @@ modules:
       ######################
       # Intel related
       - libva-intel-media-driver  #Vaapi for newer intel gpus (unsupported on mine)
-      - intel-vaapi-driver
       - intel-vsc-firmware        #Webcams and vision firmware
       - iwlegacy-firmware         #Wifi firmware for legacy intel wifi cards
       ######################
