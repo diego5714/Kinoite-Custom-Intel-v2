@@ -49,6 +49,7 @@ modules:
       # Configs, libs and drivers
       - hunspell-es
       - hunspell-es-CL
+      - libva-intel-hybrid-driver
       - steam-devices
       #####################
       # Fonts
