@@ -77,6 +77,8 @@ modules:
       - mozilla-filesystem        #Directories required by firefox
       ######################
       # Intel related
+      - libva-intel-media-driver  #Vaapi for newer intel gpus (unsupported on mine)
+      - intel-vaapi-driver
       - intel-vsc-firmware        #Webcams and vision firmware
       - iwlegacy-firmware         #Wifi firmware for legacy intel wifi cards
       ######################
