@@ -19,6 +19,7 @@ modules:
     files:
       - source: system
         destination: /
+
   - type: dnf
     repos:
       files:
@@ -31,31 +32,32 @@ modules:
           packages:
             - tailscale
 
-          # CLI Utilities #####################
-          - binutils
-          - btop
-          - fastfetch
-          - fish
-          - igt-gpu-tools
-          - lm_sensors
-          - podman-compose
-          - tealdeer
+        # CLI Utilities #####################
+        - binutils
+        - btop
+        - fastfetch
+        - fish
+        - igt-gpu-tools
+        - lm_sensors
+        - podman-compose
+        - tealdeer
 
-          # GUI Apps ##########################
-          - gnome-disk-utility
-          - goverlay
-          - gwenview
-          - kvantum
-          - okular
+        # GUI Apps ##########################
+        - gnome-disk-utility
+        - goverlay
+        - gwenview
+        - kvantum
+        - okular
 
-          # Configuration and libraries #######
-          - hunspell-es
-          - hunspell-es-CL
-          - steam-devices
+        # Configuration and libraries #######
+        - hunspell-es
+        - hunspell-es-CL
+        - steam-devices
 
-          # Fonts #############################
-          - rsms-inter-fonts
-          - rsms-inter-vf-fonts
+        # Fonts #############################
+        - rsms-inter-fonts
+        - rsms-inter-vf-fonts
+
     remove:
       packages:
         # GUI Apps ##########################
@@ -245,6 +247,5 @@ modules:
           - com.vscodium.codium
           - dev.zed.Zed
 
-  - type:
-      signing
+  - type: signing
       # this sets up the proper policy & signing files for signed images to work fully
